@@ -75,20 +75,20 @@ const Contact = () => {
       process.env.VITE_EMAILJS_PUBLIC_KEY
     ).then(() => {
       setIsLoading(false);
-      showAlert({show: true, text: 'Message sent successfully', type: 'success'});
+      showAlert({ show: true, text: 'Message sent successfully', type: 'success' });
 
       setTimeout(() => {
         hideAlert();
         setCurrentAnimation('idle (sculk)');
-        setForm({name: '', email: '', message: ''});
+        setForm({ name: '', email: '', message: '' });
       }, 3000);
     }).catch((error) => {
       setIsLoading(false);
       setCurrentAnimation('idle (sculk)');
       console.log(error);
-      showAlert({show: true, text: 'I didn\'t receive your message', type: 'danger'});
+      showAlert({ show: true, text: 'I didn\'t receive your message', type: 'danger' });
     });
-  }
+  };
 
   return (
     <section className="relative flex lg:flex-row flex-col max-container bg-slate-950 p-4">
