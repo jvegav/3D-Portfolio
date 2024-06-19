@@ -63,8 +63,8 @@ const Contact = () => {
     setCurrentAnimation('spread sculk');
 
     emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      process.env.VITE_EMAILJS_SERVICE_ID,
+      process.env.VITE_EMAILJS_TEMPLATE_ID,
       {
         from_name: form.name,
         to_name: 'Josue',
@@ -72,7 +72,7 @@ const Contact = () => {
         to_email: 'josuevegavalbuena@gmail.com',
         message: form.message
       },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      process.env.VITE_EMAILJS_PUBLIC_KEY
     ).then(() => {
       setIsLoading(false);
       showAlert({show: true, text: 'Message sent successfully', type: 'success'});
