@@ -1,11 +1,11 @@
 import  { useEffect, useRef } from 'react'
 
 
-import planeScene from '../assets/3d/basic_plane.glb'
+import planeScene from '../assets/3d/pixel_plane.glb'
 import { useAnimations, useGLTF } from '@react-three/drei'
 
 
-const Plane = ({isRotating, ...props}) => {
+const PixelPlane = ({isRotating, ...props}) => {
 
     const ref = useRef()
     const {scene,animations} = useGLTF(planeScene)
@@ -14,9 +14,9 @@ const Plane = ({isRotating, ...props}) => {
 
     useEffect(()=>{
         if (isRotating) {
-            actions["basic_plane_bones|basic_plane_bones|basic_plane_bones|ArmatureAction|basic_plane_"].play();
+            actions["ArmatureAction.001"].play();
           } else {
-            
+            actions["ArmatureAction.001"].stop();
           }
     },[actions,isRotating])
 
@@ -28,4 +28,4 @@ const Plane = ({isRotating, ...props}) => {
   )
 }
 
-export default Plane
+export default PixelPlane

@@ -5,7 +5,7 @@ import planeScene from '../assets/3d/basic_plane.glb'
 import { useAnimations, useGLTF } from '@react-three/drei'
 
 
-const Plane = ({isRotating, ...props}) => {
+const BasicPlane = ({isRotating, ...props}) => {
 
     const ref = useRef()
     const {scene,animations} = useGLTF(planeScene)
@@ -16,6 +16,7 @@ const Plane = ({isRotating, ...props}) => {
         if (isRotating) {
             actions["basic_plane_bones|basic_plane_bones|basic_plane_bones|ArmatureAction|basic_plane_"].play();
           } else {
+            actions["basic_plane_bones|basic_plane_bones|basic_plane_bones|ArmatureAction|basic_plane_"].stop();
             
           }
     },[actions,isRotating])
@@ -28,4 +29,4 @@ const Plane = ({isRotating, ...props}) => {
   )
 }
 
-export default Plane
+export default BasicPlane

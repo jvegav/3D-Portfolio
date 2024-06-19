@@ -9,7 +9,7 @@ import About from "./pages/About"
 
 const App = () => {
   return (
-    <main className="bg-indigo-300/50">
+    <main className="bg-slate-950 h-[100vh]">
         <Router>
             <NavBar/>
             <Routes>
