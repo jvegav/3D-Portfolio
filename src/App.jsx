@@ -7,6 +7,7 @@ import Contact from "./pages/Contact"
 import About from "./pages/About"
 
 
+
 const App = () => {
   return (
     <main className="bg-slate-950 h-[100vh]">
